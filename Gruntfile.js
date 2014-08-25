@@ -384,8 +384,21 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
-    }
+    },
+      compress: {
+          dev: {
+              options: {
+                  archive: 'FullApp.zip'
+              },
+              files: [
+                  {src: ['**'], dest: '.', cwd: 'app/',expand: true}, // includes files in path and its subdirs
+
+              ]
+          }
+      },
   });
+
+
 
     grunt.loadNpmTasks('grunt-connect-proxy');
 
