@@ -1,0 +1,29 @@
+<div class="row marketing">
+    This page shows how to use the API behind: <a href="http://tsviewer.vito-eodata.be">http://tsviewer.vito-eodata.be</a><br>
+    Use your browsers developer tools to inspect the code, and the queries being sent.
+<p>
+    General info about the Saiku REST API is available at:
+    <a href="http//tsviewer.vito-eodata.be/saiku4/serverdocs/">http//tsviewer.vito-eodata.be/saiku4/serverdocs/</a><br>
+    You can also use the online <a href="http://ese.vgt.vito.be/saiku-ui4/">Saiku</a> webapp to explore the available cubes,
+    and to easily create MDX queries (login with username 'admin' and password 'admin').
+
+</p>
+
+</div>
+<div class="row marketing">
+    The first query simply logs in with saiku, and creates a session. Once we have a session, we have to create a new query. Saiku returns this result when the query is created:<br>
+    <pre pretty-json="query" />
+
+</div>
+<div class="row marketing">
+    Before we can start constructing MDX queries, we might want to query some metadata about the OLAP cube. For instance, we can query the list of available countries.<br>
+    This simple GET request returns the list below:
+    <pre>http://localhost:9000/saiku4/rest/saiku/admin/discover/TimeSeriesWithRegionsHadoop/ESECube/ESECube/EseCube/dimensions/Geography/hierarchies/geography/levels/Country</pre>
+
+    <pre pretty-json="countries" />
+
+</div>
+<div class="row marketing">
+    Finally, we can use the constructed query to send as many MDX queries as we like. MDX is a query language, like SQL, but specifically designed for OLAP cubes.<br>
+    <pre pretty-json="data" />
+</div>
