@@ -27,6 +27,6 @@ services.factory('MDXQuery', ['$resource',
       remove: {
         method:'DELETE'
       }
-    })
+    });
   }
 ]);

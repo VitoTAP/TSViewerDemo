@@ -192,7 +192,9 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       options: {
-        cwd: '<%= yeoman.app %>'
+        cwd: '<%= yeoman.app %>',
+        directory: 'app/bower_components',
+        bowerJson: require('./bower.json')
       },
       app: {
         src: ['<%= yeoman.app %>/index.html'],
@@ -450,7 +452,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'test',
+    //'test',
     'build'
   ]);
 };
